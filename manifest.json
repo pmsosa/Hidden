@@ -7,8 +7,13 @@
     "history",
     "webRequestBlocking",
     "tabs",
+    "storage",
     "<all_urls>"
-    ],
+  ],
+  "browser_action":{
+    "default_icon":"icon.png",
+    "default_popup":"popup.html"
+  },
   "background": {
     "scripts": ["background.js"]
   },
