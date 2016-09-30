@@ -17,6 +17,6 @@
   "background": {
     "scripts": ["background.js"]
   },
-
+  "options_page":"index.html",
   "manifest_version": 2
 }

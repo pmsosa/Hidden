@@ -1,17 +1,20 @@
-//ADD ITEM
+// Github: https://github.com/pmsosa
+
+//Add Item Button Action
 function additem(){
 	console.log("adding...");
 	newitem = document.getElementById("newitem").value;
 	if (newitem.value != ""){
 		chrome.extension.getBackgroundPage().addblacklist(newitem);
 		fill_blacklist();
+		document.getElementById("newitem").value = "";
 	}
 	else{
 		newitem.focus();
 	}
 }
 
-//REMOVE ITEM
+//Remove Item Button Action
 function rmitem(){
 	console.log("rming...");
 	newitem = itemlist.value;
@@ -24,6 +27,7 @@ function rmitem(){
 	}
 }
 
+//Remove Button Disabling
 function rmbtndisable(){
 	if (itemlist.value == ""){
 		btrm.disabled = true;
@@ -34,25 +38,7 @@ function rmbtndisable(){
 }
 
 
-
-
-document.addEventListener('DOMContentLoaded', function () {
-	var btadd = document.getElementById("btadd");
-	var btrm  = document.getElementById("btrm");
-	var itemlist = document.getElementById("itemlist");
-	
-
-	btadd.addEventListener('click',additem);
-	btrm.addEventListener('click',rmitem);
-	itemlist.addEventListener('change',rmbtndisable)
-	btrm.disabled = true;
-	fill_blacklist();
-
-
-
-});
-
-
+//Fills the Blacklist with the Filtered Keywords
 function fill_blacklist(){
 	itemlist.innerHTML = ""
 	bl = chrome.extension.getBackgroundPage().blacklist;
@@ -66,3 +52,28 @@ function fill_blacklist(){
 		}
 	}
 }
+
+
+//Show Instructions
+function showInstructions(){
+chrome.tabs.create({
+  url: chrome.extension.getURL("index.html")
+});
+}
+
+//Run this when you load!
+document.addEventListener('DOMContentLoaded', function () {
+	var btadd = document.getElementById("btadd");
+	var btrm  = document.getElementById("btrm");
+	var itemlist = document.getElementById("itemlist");
+	var instr = document.getElementById("instr");
+	
+
+	btadd.addEventListener('click',additem);
+	btrm.addEventListener('click',rmitem);
+	itemlist.addEventListener('change',rmbtndisable);
+	instr.addEventListener('click',showInstructions);
+	btrm.disabled = true;
+	fill_blacklist();
+});
+

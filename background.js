@@ -1,4 +1,4 @@
-//Hidden - Pedro M. Sosa
+// Github: https://github.com/pmsosa
 
 
 //Blacklist
@@ -10,22 +10,17 @@ var KEY = "HIDD3N"
 //Add a new item to blacklist
 function addblacklist(item){
   console.log("saving new case");
-  blacklist.push(item)
+  blacklist.push(item.toLowerCase())
   chrome.storage.sync.set({KEY: JSON.stringify(blacklist)});
 }
 
 //Remove item from blacklist
 function removeblacklist(item,callback){
   console.log("removing old case");
-  blacklist.splice(blacklist.indexOf(item),1)
+  blacklist.splice(blacklist.indexOf(item.toLowerCase()),1)
   chrome.storage.sync.set({KEY: JSON.stringify(blacklist)});
   callback();
 }
-
-
-
-
-
 
 //Is a URL blacklisted
 function blacklisted(url){
@@ -48,7 +43,7 @@ function hide(info){
     chrome.tabs.get(info.tabId, function(tab){
       if (info.type=="main_frame" & tab != undefined){
         
-        url = info.url;
+        url = info.url.toLowerCase();
         console.debug(info);
 
         chrome.tabs.remove(info.tabId);
