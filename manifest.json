@@ -1,5 +1,6 @@
 {
-  "name": "Hidden",
+  "name": "Hidden : Auto-Incognito Filter",
+  "short_name": "Hidden",
   "version": "1.0",
   "description": "Automatically filter websites to be opened under Incognito mode.",
   "permissions": [
@@ -23,5 +24,8 @@
     "scripts": ["background.js"]
   },
   "options_page":"index.html",
+  "web_accessible_resources": [
+       "images/screenshot.png"
+     ],
   "manifest_version": 2
 }

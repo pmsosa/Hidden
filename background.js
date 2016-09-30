@@ -10,14 +10,16 @@ var KEY = "HIDD3N"
 //Add a new item to blacklist
 function addblacklist(item){
   console.log("saving new case");
-  blacklist.push(item.toLowerCase())
+  blacklist.push(item.toLowerCase());
+  blacklist.sort();
   chrome.storage.sync.set({KEY: JSON.stringify(blacklist)});
 }
 
 //Remove item from blacklist
 function removeblacklist(item,callback){
   console.log("removing old case");
-  blacklist.splice(blacklist.indexOf(item.toLowerCase()),1)
+  blacklist.splice(blacklist.indexOf(item.toLowerCase()),1);
+  blacklist.sort();
   chrome.storage.sync.set({KEY: JSON.stringify(blacklist)});
   callback();
 }
