@@ -27,5 +27,6 @@
   "web_accessible_resources": [
        "images/screenshot.png"
      ],
+  "incognito":"not_allowed",
   "manifest_version": 2
 }
