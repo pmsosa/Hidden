@@ -61,6 +61,9 @@ chrome.tabs.create({
 });
 }
 
+
+
+
 //Run this when you load!
 document.addEventListener('DOMContentLoaded', function () {
 	var btadd = document.getElementById("btadd");
@@ -75,5 +78,21 @@ document.addEventListener('DOMContentLoaded', function () {
 	instr.addEventListener('click',showInstructions);
 	btrm.disabled = true;
 	fill_blacklist();
+
+
+	//Key Bindings to make the Extension a bit more user friendly
+	document.addEventListener("keydown", function(e){
+	    if(e.keyCode === 13 && document.activeElement.id == 'newitem') {
+	        additem();
+	    }
+
+	    if(e.keyCode === 8 || e.keyCode === 46) {
+	    	if (document.activeElement.id == 'itemlist' && btrm.disabled === false){
+	        	rmitem();
+	    	}
+	    }
+	});
+
+
 });
 
