@@ -1,0 +1,17 @@
+{
+  "name": "Hidden",
+  "version": "1.0",
+  "description": "Automatically filter websites to be opened under Incognito mode.",
+  "permissions": [
+    "webRequest",
+    "history",
+    "webRequestBlocking",
+    "tabs",
+    "<all_urls>"
+    ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "manifest_version": 2
+}
