@@ -1,7 +1,8 @@
-<h1>HIDDEN</h1>
-<h2>Filter websites to automatically open them in Incognito mode</h2>
-<h3>Konuko II - <a href="http://konukoii.com">Website</a> | <a href="http://github.com/pmsosa">Github</a></h3>
-<hr>
+<h1>HIDDEN : Auto-Incognito Filter</h1>
+<h3>Filter websites to automatically open them in Incognito mode</h3>
+<a href="https://chrome.google.com/webstore/detail/hidden-auto-incognito-fil/ilankdeoodaclegebpfgkfnbciiaabeo">
+<img src="https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png"/>
+</a>
 <h3>Instructions</h3>
 <ul>
 	<li>Simply add keywords or URLs that you would like to be always opened by Incognito window.
@@ -9,4 +10,5 @@
 </ul>
 
 <br><br>
+
 The Monkey Emoji is provided by <a href="http://emojione.com/">EmojiOne</a>.
