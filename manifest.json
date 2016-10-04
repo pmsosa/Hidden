@@ -1,7 +1,7 @@
 {
   "name": "Hidden : Auto-Incognito Filter",
   "short_name": "Hidden",
-  "version": "1.0",
+  "version": "1.2",
   "description": "Automatically filter websites to be opened under Incognito mode.",
   "permissions": [
     "webRequest",

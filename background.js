@@ -6,22 +6,25 @@ var blacklist = [ ];
 var KEY = "HIDD3N"
 
 
-
 //Add a new item to blacklist
 function addblacklist(item){
-  console.log("saving new case");
+  
   blacklist.push(item.toLowerCase());
   blacklist.sort();
-  chrome.storage.sync.set({KEY: JSON.stringify(blacklist)});
+  toSave = {};
+  toSave[KEY] = JSON.stringify(blacklist);
+  chrome.storage.sync.set(toSave,function(){console.log("saved new case")});
 }
 
 //Remove item from blacklist
 function removeblacklist(item,callback){
-  console.log("removing old case");
+
   blacklist.splice(blacklist.indexOf(item.toLowerCase()),1);
   blacklist.sort();
-  chrome.storage.sync.set({KEY: JSON.stringify(blacklist)});
-  callback();
+  
+  toSave = {};
+  toSave[KEY] = JSON.stringify(blacklist);
+  chrome.storage.sync.set(toSave,callback);
 }
 
 //Is a URL blacklisted
@@ -61,18 +64,23 @@ function hide(info){
 
 //Listener
 chrome.webRequest.onBeforeRequest.addListener(hide,{urls:["<all_urls>"]},["blocking"]);
+initBlacklist();
 
 //Initialize Blacklist
-chrome.storage.sync.get(KEY,
-  function(item){
-    //Blacklist does not exist!
-    if (Object.keys(item).length === 0){
-      console.log("not found!");
-      blacklist = [ ];
+function initBlacklist(){
+  chrome.storage.sync.get(KEY,
+    function(item){
+      console.log(item);
+      //Blacklist does not exist!
+      if (Object.keys(item).length === 0){
+        console.log("not found!");
+        blacklist = [ ];
+      }
+      //Blacklist was found!
+      else{
+        blacklist = JSON.parse(item[KEY]);
+        console.log("found!")
+      } 
     }
-    //Blacklist was found!
-    else{
-      blacklist = JSON.parse(item);
-    } 
-  }
-);
+  );
+}
