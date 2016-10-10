@@ -2,7 +2,7 @@
 <h3>Filter websites to automatically open them in Incognito mode</h3>
 
 <b>Read this program's postmortem at <a href="http://konukoii.com/blog/2016/10/10/coding-chrome-extensions-quickly/">my blog </a></b>
-</br>
+</br></br>
 <a href="https://chrome.google.com/webstore/detail/hidden-auto-incognito-fil/ilankdeoodaclegebpfgkfnbciiaabeo">
 <img src="https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png"/>
 </a>
