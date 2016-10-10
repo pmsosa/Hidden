@@ -61,6 +61,15 @@ function hide(info){
 } //EndHide
 
 
+function cleanlist(){
+  var tempBlacklist = []
+  for (var i = 0; i < blacklist.length; i++){
+    if (blacklist[i].length > 2){
+      tempBlacklist.push(blacklist[i])
+    }
+  }
+  blacklist = tempBlacklist;
+}
 
 //Listener
 chrome.webRequest.onBeforeRequest.addListener(hide,{urls:["<all_urls>"]},["blocking"]);
@@ -79,6 +88,7 @@ function initBlacklist(){
       //Blacklist was found!
       else{
         blacklist = JSON.parse(item[KEY]);
+        cleanlist();
         console.log("found!")
       } 
     }
