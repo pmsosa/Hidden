@@ -7,11 +7,15 @@
 <img src="https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png"/>
 </a>
 
+
 <h3>Instructions</h3>
 <ul>
 	<li>Simply add keywords or URLs that you would like to be always opened by Incognito window.
 	<li>For example, if you add the keyword <b>"hacker"</b> to your filters, every website containing the word "hacker" in it will be immediatly opened under incognito mode. (eg. "https://en.wikipedia.org/wiki/<b>Hacker</b>" or "https://www.<b>hacker</b>rank.com/")
 </ul>
+
+![](https://lh3.googleusercontent.com/GwSUcUQbvTGWPvfM-yBPoE4eAdsAQ_M5F4dQmnlhyriTzIdjkOjXwBKSVlz53GcL2O4PDlY3Fuk=s1280-h800-e365-rw)
+
 
 <br><br>
 
