@@ -48,7 +48,7 @@ function hide(info){
     chrome.tabs.get(info.tabId, function(tab){
       if (info.type=="main_frame" & tab != undefined){
         
-        url = info.url.toLowerCase();
+        url = info.url; //.toLowerCase();
         console.debug(info);
 
         chrome.tabs.remove(info.tabId);
